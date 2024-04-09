@@ -8,7 +8,8 @@ A source of complexity is the different types of units that we rent and the
 relationships between those sellable units, members, and the contracts that
 link units to members.
 
-There are two parts to this exericse.
+For this exercise, we will focus just on the sellable units. There are two parts
+to this exericse.
 
 1. You will create a write-up that includes ER Diagrams or Relational Schema 
    expressing how you would model the relationships and your rationale for why 
@@ -31,13 +32,10 @@ An Apartment may be:
 - entirely Traditional
 - mix of Co-living and Traditional
 
-A Contract represents:
-- the actual lease interval (e.g., 2024-01-01 to 2024-06-01)
-- Contracts form a linear tree with the root being the first Contract
+Unit (Rent) Prices are for individual Units and given durations (e.g., $1,307 for 18 Months).
+A Price may have zero or more Concessions (i.e., money off).
 
-A Member represents:
-- the applicant/resident that rents a Unit and is connected to the unit via a Contract
-
+Units have zero or more Fees (e.g., Screen Fee).
 
 ## API
 The NAMER (North America) API for listings returns the current available 
@@ -51,7 +49,12 @@ Swagger Docs: https://www.common.com/cmn-api/docs#/integration/ListingsControlle
 
 
 Notes:
+- id defines the unique sellable unit (either a Room for co-living or the Apartment for traditional)
 - occupancyType defines if the unit is coliving (SHARED) or traditional (PRIVATE)
+- propertyId is the Property ID
+- address.roomNumber defines the Room number within an apartment (or the entire Apartment number if
+  the apartment is traditional)
+- ignore the Amenities arrays
 
 
 
@@ -63,8 +66,8 @@ Please attach visuals in the form of either an ER diagram or a relational schema
 You do not need to assume that you are working in any particular database system.
 
 We are looking for:
-- clarity of thought and argument
-- scalability of the proposed model (e.g., what if we start renting to businesses?)
+- clarity of thought and arguments
+- scalability of the proposed model (e.g., what if we start renting to businesses? would that change anything?)
 
 ## Code Exercise
 
