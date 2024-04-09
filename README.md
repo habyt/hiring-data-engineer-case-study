@@ -57,13 +57,14 @@ Notes:
 
 ## Schema Write-up
 
-Create a write-up detailing your proposed schema for the above relationships.
+Create a write-up detailing your proposed (normalized) schema for the above relationships.
 Please attach visuals in the form of either an ER diagram or a relational schema.
 
 You do not need to assume that you are working in any particular database system.
 
 We are looking for:
 - clarity of thought and argument
+- scalability of the proposed model (e.g., what if we start renting to businesses?)
 
 ## Code Exercise
 
