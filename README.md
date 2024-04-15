@@ -75,6 +75,7 @@ Use the above API to:
 - pull data
 - transform the data into object models that represent your proposed schema
 - serialize the models and persist them as files (e.g., csv, json)
+- code should run inside a Docker container
 
 We are looking for:
 - clarity of code and rationale for choices
